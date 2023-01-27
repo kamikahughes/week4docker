@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Leaf Identification Model</title>
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+            text-align: center;
+        }
+    
+        h1 {
+            color: green;
+        }
+    
+        h4 {
+            color: orange;
+        }
+    
+        form {
+            display: inline-block;
+            text-align: left;
+        }
+    
+        input[type="text"] {
+            width: 300px;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+        }
+    
+        input[type="submit"] {
+            width: 100px;
+            background-color: yellow;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+    
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    
+        li {
+            list-style-type: none;
+        }
+
+    </style>
+    
+</head>
+<body>
+    <h1>Leaf Identification</h1>
+    <h4>Author:  Kamika Hughes</h4>
+    <p>This model can be used to identify 40 different leaf classes</p>
+
+    <form action="{{ url_for('predict')}}" method="POST">
+        Aspect_Ratio:  <input type="text" name="Aspect_Ratio"></br>
+        Uniformity:  <input type="text" name="Uniformity"></br>
+	  Elongation:  <input type="text" name="Elongation"></br>
+        Solidity:  <input type="text" name="Solidity"></br>
+
+        <input type=submit value=Submit>
+   </form>
+    <h2>Prediction: {{ predict }}</h2>
+    <p>Value shown indicates which class of leaf is being identified.</p>
+    <p>There are 40 classes, shown as follows: </p>
+    <ul>
+        <li>1 = Quercus_Suber 	21 = Fraxinus_sp</li>
+        <li>2 = Salix_Atrocinera	22 = Primula_Vulgaris</li>
+        <li>3 = Populus_Nigra		23 = Eroduim_Sp</li>
+        <li>4 = Alnus_Sp		24 = Bougainvillea_Sp</li>
+        <li>5 = Quercus_Robur		25 = Arisarum_Vulgare</li>
+	  <li>6 = Crataegus_Monogyna	26 = Euonymus_Japonicus</li>
+	  <li>7 = Ilex_Aquifolium	27 = Ilex_Perado_ssp_Azorica</li>
+	  <li>8 = Nerium_Oleander	28 = Magnolia_soulangeana</li>
+	  <li>9 = Betula_Pubescens	29 = Bixus_Sempervirens</li>
+	  <li>10 = Tilia_Tomentosa	30 = Urtica_Dioica</li>
+	  <li>11 = Acer_palmatum	31 = Podocarpus_sp</li>
+	  <li>12 = Celtis_Sp		32 = Acca_Sellowiana</li>
+	  <li>13 = Corylus_Avellana	33 = Hydrangea_sp</li>
+	  <li>14 = Castamea_Sativa	34 = Pseudosasa_Japonica</li>
+	  <li>15 = Populus_Alba		35 = Magnolia_Grandiflora</li>
+	  <li>16 = Acer_Negundo		36 = Geranium_Sp</li>
+	  <li>17 = Taxus_Bacatta	37 = Aesculus_Californica</li>
+	  <li>18 = Papaver_Sp		38 = Chelidonuim_Majus</li>
+	  <li>19 = Polypolium_Vulgare	39 = Schinus_Terebinthifolius</li>
+	  <li>20 = Pinus_Sp		40 = Fragaria_Vesca</li>
+      </ul>  
+    <h2>Thank you for using Kamika's Leaf Identification Model</h2>
+    <p>ANA680 Week 4</p>
+</body>
+</html>
